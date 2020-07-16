@@ -1,5 +1,6 @@
 package com.spring.book.springboot.domain.posts;
 
+import com.spring.book.springboot.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,7 +10,7 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor
 @Entity
-public class Posts { // 실제 데이터베이스의 테이블과 매칭될 클래스, 보통 Entity 클래스라 한다.
+public class Posts extends BaseTimeEntity { // 실제 데이터베이스의 테이블과 매칭될 클래스, 보통 Entity 클래스라 한다.
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
