@@ -8,9 +8,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.hamcrest.Matchers.is;
 // 테스트를 진행할 때 JUnit에 내장된 실행자 대신 SpringRunner라는 스프링 실행자를 사용한다.
 // 즉, 스프링 부트 테스트와 JUnit 사이의 연결자 역할을 한다.
 @RunWith(SpringRunner.class)
@@ -37,5 +36,18 @@ public class HelloControllerTest {
       mvc.perform(get("/hello")) // MockMvc를 통해 GET 요청, 체이닝을 통해 아래와 같이 검증한다.
               .andExpect(status().isOk())  // perform의 결과 검증, HTTP Header의 Status를 검증한다. 즉, 200, 404, 500 등의 상태를 검증하는데, 여기서는 OK(200)을 검증한다.
               .andExpect(content().string(hello)); // 응답 본문의 내용을 검증한다. 컨트롤러에서 리턴하는 값이 hello 이므로 이를 검증한다.
+   }
+
+   @Test
+   public void HelloResponseDto_리턴() throws Exception {
+      String name = "hello";
+      int amount = 1234;
+
+      mvc.perform(get("/hello/dto")
+              .param("name", name) // 요청 파라미터 설정(값은 문자열만 가능)
+              .param("amount", String.valueOf(amount)))
+              .andExpect(status().isOk())
+              .andExpect(jsonPath("$.name", is(name))) // json 응답을 필드별로 검증($를 사용하여 필드 명시)
+              .andExpect(jsonPath("$.amount", is(amount)));
    }
 }
