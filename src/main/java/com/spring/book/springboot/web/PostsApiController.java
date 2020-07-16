@@ -27,4 +27,11 @@ public class PostsApiController {
     public PostsResponseDto findById(@PathVariable Long id) {
         return postsService.findById(id);
     }
+
+    @GetMapping("/cache")
+    public String test() {
+        postsService.save(new PostsSaveRequestDto("a", "b", "c"));
+        postsService.test1Cache();
+        return "ok";
+    }
 }

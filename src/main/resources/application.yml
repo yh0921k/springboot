@@ -1,0 +1,11 @@
+spring:
+  jpa:
+    show-sql: true
+    properties:
+      dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+      hibernate.format_sql: true # 한줄에 보이던 sql을 pretty
+
+#server:
+#  port: 80
+
+# 주석
