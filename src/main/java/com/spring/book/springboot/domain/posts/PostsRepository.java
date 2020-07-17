@@ -1,6 +1,9 @@
 package com.spring.book.springboot.domain.posts;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+import java.util.List;
 
 public interface PostsRepository extends JpaRepository<Posts, Long> {
     // Posts 클래스로 데이터베이스에 접근하게 해줄 JpaRepository
@@ -8,4 +11,10 @@ public interface PostsRepository extends JpaRepository<Posts, Long> {
     // JPA에서는 Repository라고 부르며, 인터페이스로 생성한다.
     // 이후 JpaRepository<Entity Type, PK Type>를 상속하면 기본적인 CRUD 메서드가 자동으로 생성된다.
     // 주의할 점은 Entity 클래스와 Repository는 같은 위치에 있어야 한다는 것이다.
+
+
+    // 쿼리 사용 가능
+    @Query("select p from Posts p order by p.id desc")
+    List<Posts> findAllDesc();
+
 }
