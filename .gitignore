@@ -236,4 +236,6 @@ gradle-app.setting
 ### Gradle Patch ###
 **/build/
 
+### secret ###
+application-oauth.yml
 # End of https://www.toptal.com/developers/gitignore/api/java,intellij,eclipse,visualstudiocode,gradle,git
