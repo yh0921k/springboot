@@ -9,6 +9,8 @@ spring:
   h2:
     console:
       enabled: true
+  session:
+    store-type: jdbc
 
 #server:
 #  port: 80
