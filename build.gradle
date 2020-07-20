@@ -47,4 +47,7 @@ dependencies {
 
     // Session
     compile('org.springframework.session:spring-session-jdbc')
+
+    // Security for Test Code
+    compile('org.springframework.security:spring-security-test')
 }

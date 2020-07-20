@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 // JPA Auditing 활성화
-@EnableJpaAuditing
+//@EnableJpaAuditing // 테스트 코드를 수행하기 위해 분리
 
 // 스프링 부트의 자동 설정, 스프링 빈 읽기와 생성을 모두 자동으로 설정
 // 특히 해당 어노테이션의 위치로부터 설정을 읽어나가기 때문에 프로젝트 최상단에 위치해야함

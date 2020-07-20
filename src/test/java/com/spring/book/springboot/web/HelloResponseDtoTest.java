@@ -20,6 +20,6 @@ public class HelloResponseDtoTest {
         // 검증하고 싶은 대상을 메서드 인자로 받는다.
         // isEqualTo는 assertThat에 있는 값과 같을 때만 성공한다.
         Assertions.assertThat(dto.getName()).isEqualTo(name);
-        Assertions.assertThat(dto.getAmount()).isEqualTo(name);
+        Assertions.assertThat(dto.getAmount()).isEqualTo(amount);
     }
 }
