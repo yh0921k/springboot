@@ -238,4 +238,5 @@ gradle-app.setting
 
 ### secret ###
 application-oauth.yml
+application-real-db.yml
 # End of https://www.toptal.com/developers/gitignore/api/java,intellij,eclipse,visualstudiocode,gradle,git

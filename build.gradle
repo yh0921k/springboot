@@ -50,4 +50,8 @@ dependencies {
 
     // Security for Test Code
     compile('org.springframework.security:spring-security-test')
+
+    // MySQL
+    implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.15'
+
 }
