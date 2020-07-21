@@ -1,0 +1,21 @@
+language: java
+jdk:
+  - openjdk8
+
+branches:
+  only:
+    - master
+
+# Travis CI Server Home
+cache:
+  directories:
+    - '$HOME/.m2/repository'
+    - '$HOME/.gradle'
+
+script: "./gradlew clean build"
+
+# Email Push after CI Complete
+notifications:
+  email:
+    recipients:
+      - "yh0921k@naver.com"
