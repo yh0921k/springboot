@@ -54,4 +54,6 @@ dependencies {
     // MySQL
     implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.15'
 
+    // MariaDB
+    compile('org.mariadb.jdbc:mariadb-java-client')
 }
