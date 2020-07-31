@@ -35,3 +35,14 @@ deploy:
     acl: private # Auth to access zip file is private
     local_dir: deploy # Directory Name above before_deploy makes
     wait-until-deployed: true
+  - provider: codedeploy
+    access_key_id: $AWS_ACCESS_KEY # Travis Repo Settings에 설정한 값
+    secret_access_key: $AWS_SECRET_KEY # Travis Repo Settings에 설정한 값
+    bucket: kyh-springboot-build # S3 Bucket
+    key: springboot.zip # 빌드 파일을 압축해서 전달
+    bundle_type: zip # 압축 확장자
+    application: springboot # 웹 콘솔에서 등록한 CodeDeploy 어플리케이션
+    deployment_group: springboot_group # 웹 콘솔에서 등록한 CodeDeploy 배포 그룹
+    region: ap-northeast-2
+    wait-until-deployed: true
+
