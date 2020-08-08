@@ -7,7 +7,7 @@ echo "> Build file copy"
 cp $REPOSITORY/zip/*.jar $REPOSITORY/
 
 echo "> Checking current working application pid"
-CURRENT_PID=$(pgrep -fl springboot | grep jar | aws '{print $1}')
+CURRENT_PID=$(pgrep -fl springboot | grep jar | awk '{print $1}')
 echo "> PID : $CURRENT_PID"
 
 if [ -z "$CURRENT_PID" ]; then
