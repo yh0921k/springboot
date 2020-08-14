@@ -1,6 +1,6 @@
 var main = {
     init : function() {
-        let _this = this;
+        var _this = this;
         $('#btn-save').on('click', function() {
             _this.save();
         });
@@ -15,7 +15,7 @@ var main = {
     },
 
     save : function() {
-        let data = {
+        var data = {
             title: $('#title').val(),
             author: $('#author').val(),
             content: $('#content').val()
@@ -36,12 +36,12 @@ var main = {
     },
 
     update: function() {
-        let data = {
+        var data = {
             title: $('#title').val(),
             content: $('#content').val()
         };
 
-        let id = $('#id').val();
+        var id = $('#id').val();
 
         $.ajax({
            type: 'put',
@@ -58,7 +58,7 @@ var main = {
     },
 
     delete: function() {
-        let id = $('#id').val();
+        var id = $('#id').val();
 
         $.ajax({
            type: 'delete',
